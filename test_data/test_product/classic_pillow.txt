@@ -1,0 +1,11 @@
+size: 20"x20"
+color: Natural
+	Dark Olive
+	Ocean
+Description: A classic pillow for anywhere and everywhere.
+		The merrow edge border adds a tailored touch.
+		Our linen is blended with viscose for a smooth, soothing handfeel.
+		Casual, laidback linen adds a relaxed feel to your sofa or bed.
+		These pillow covers come in multiple colours and sizes so you can mix and match your favourites.
+selling price: 51
+discount price: 42
