@@ -25,7 +25,7 @@ exports.addItemToCart = async ({
     if (checkCart) {
       let result = await Cart.query().patchAndFetchById(checkCart.id, {
         quantity: quantity,
-        subTotal: quantity * checkProduct.sellingPrice,
+        subTotal: quantity * (checkProduct.discountPrice == 0 ? checkProduct.sellingPrice : checkProduct.discountPrice),
       });
       return {
         products: checkProduct,
@@ -37,7 +37,7 @@ exports.addItemToCart = async ({
       productId,
       userId,
       quantity,
-      subTotal: quantity * checkProduct.sellingPrice,
+      subTotal: quantity * (checkProduct.discountPrice == 0 ? checkProduct.sellingPrice : checkProduct.discountPrice),
       productSize,
       productColor,
     });
