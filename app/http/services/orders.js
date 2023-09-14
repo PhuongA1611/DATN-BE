@@ -50,10 +50,11 @@ exports.getAllOrdersByUserId = async ({ page, limit, userId, sortBy }) => {
   }
 };
 
-exports.getAll = async ({ page, limit }) => {
+exports.getAll = async ({ page, limit, sortBy }) => {
   try {
     if (page < 1 || limit < 1) abort(400, 'Invalid page or limit');
     const result = await Orders.query()
+      .orderBy('created_at', 'desc')
       .withGraphFetched('shipping')
       .page(page - 1, limit);
     // fetch all order Detail of each order

@@ -1,9 +1,13 @@
 const ordersService = require('../../services/orders');
 
 async function getAll(req, res) {
-  const { page, limit } = req.query;
+  const { page, limit, sortBy } = req.query;
 
-  const { results, total } = await ordersService.getAll({ page, limit });
+  const { results, total } = await ordersService.getAll({
+    page,
+    limit,
+    sortBy,
+  });
 
   res.status(200).json({
     data: results,
