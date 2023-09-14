@@ -25,6 +25,10 @@ app.use(bodyParser.json());
 Object.keys(routes).map((route) => app.use('/api', routes[route]));
 
 app.use((req, res) => {
+  res.status(200).send('Api not found');
+});
+
+app.use((req, res) => {
   res.status(404).send('Api not found');
 });
 
